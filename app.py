@@ -44,7 +44,7 @@ if option=="Basic Information":
 
     st.divider()
 
-    Fetch and display detailed tables
+    # Fetch and display detailed tables
     tables=get_additonal_tables(cursor)
     for labels, data in tables.items():
        st.header(labels)
