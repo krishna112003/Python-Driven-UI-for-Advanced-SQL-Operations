@@ -1,4 +1,11 @@
-import mysql.connector
+import streamlit as st
+
+try:
+    import mysql.connector
+    st.write("MYSQL CONNECTOR IMPORTED SUCCESSFULLY")
+except Exception as e:
+    st.error(f"MYSQL IMPORT ERROR: {e}")
+    raise
 
 def connect_to_db():
     return mysql.connector.connect(
