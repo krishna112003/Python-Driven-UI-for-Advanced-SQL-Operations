@@ -27,7 +27,7 @@ cursor=db.cursor(dictionary=True)
 if option=="Basic Information":
     st.header("Basic Metrics")
 
-    get basic information from DB
+    # get basic information from DB
     basic_info = get_basic_info(cursor)
 
 
