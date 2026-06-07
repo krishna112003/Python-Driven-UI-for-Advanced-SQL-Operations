@@ -1,14 +1,13 @@
 import streamlit as st
 import mysql.connector
 
-# def connect_to_db():
-#     return mysql.connector.connect(
-#     host="localhost",
-#     user="root",
-#     password="Krishna...#1",
-#     database="PROJECT")
 def connect_to_db():
-    return None
+    return mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Krishna...#1",
+    database="PROJECT")
+
 
 
 def get_basic_info(cursor):

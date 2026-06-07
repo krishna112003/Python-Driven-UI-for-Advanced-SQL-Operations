@@ -19,25 +19,17 @@ option = st.sidebar.radio("Select Option:", ["Basic Information","Operational Ta
 
 # main space
 st.title("Inventory and Supply Chain Dashboard")
-# db=connect_to_db()
-# cursor=db.cursor(dictionary=True)
-db = None
-cursor = None
+db=connect_to_db()
+cursor=db.cursor(dictionary=True)
+
 
  # --------------------- BASIC INFORMATION PAGE ---------------4
 if option=="Basic Information":
     st.header("Basic Metrics")
 
-    # get basic information from DB
-    # basic_info = get_basic_info(cursor)
-    basic_info = {
-        "Total Suppliers": 10,
-        "Total Products": 50,
-        "Total Categories Dealing": 5,
-        "Total Sale Value (Last 3 Months)": 25000,
-        "Total Restock Value (Last 3 Months)": 18000,
-        "Below Reorder & No Pending Reorders": 4
-    }
+    get basic information from DB
+    basic_info = get_basic_info(cursor)
+
 
     cols=st.columns(3)
     keys=list(basic_info.keys())
@@ -52,14 +44,14 @@ if option=="Basic Information":
 
     st.divider()
 
-    # Fetch and display detailed tables
-    # tables=get_additonal_tables(cursor)
-    # for labels, data in tables.items():
-    #    st.header(labels)
-    #    df= pd.DataFrame(data)
-    #    st.dataframe(df)
-    #    st.divider()
-    st.write("Demo Version Running Successfully")
+    Fetch and display detailed tables
+    tables=get_additonal_tables(cursor)
+    for labels, data in tables.items():
+       st.header(labels)
+       df= pd.DataFrame(data)
+       st.dataframe(df)
+       st.divider()
+
 
 elif option == "Operational Tasks":
     st.header("Operational Tasks")
